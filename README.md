@@ -1,4 +1,4 @@
-# Travel-Buddy
+# Design-and-Developement-of-a-web-based-travel-buddy-Finder-System-for-Solo-Travellers  
 
  INTRODUCTION 
 This Project helps in finding and joining the Individuals who are willing to travel around the world 
