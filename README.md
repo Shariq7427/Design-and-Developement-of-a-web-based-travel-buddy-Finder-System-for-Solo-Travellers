@@ -1,49 +1,400 @@
-# Design-and-Developement-of-a-web-based-travel-buddy-Finder-System-for-Solo-Travellers  
+# 🌍 Travel Buddy Finder System for Solo Travellers
 
- INTRODUCTION 
-This Project helps in finding and joining the Individuals who are willing to travel around the world 
-but they are alone. This Project provides a platform to communicate with each other who want to 
-go to a trip but they are alone. This Project helps in finding a partner who is going to the same 
-location that the user wants to go. This Project helps in finding a travel partner who helps in 
-exploring the world or the most popular locations the world. Individuals who want to go on a trip 
-to similar places at approximately same time. This Project helps in finding the partner who wants 
-to go to the similar place as the user wants to go. This Project can give a Tour guide who has a good 
-knowledge on the most popular places in the world. This Project can provide a Volunteer who takes 
-care of the travelers in their journey of travel. The Volunteers Takes care of Everything that the 
-users want. This Project also provides a car for rental with a driver. This Project helps in exploring 
-the world with a partner who wants go to similar places and who enjoys a lot in the journey. Many 
-Individuals who want to go a trip when they get a leave can get help from this Web Application. 
-Travelers can share the trip amount equally between them.
+A full-stack web application designed to help solo travellers connect with compatible travel partners while providing administrators with tools to manage trips, drivers, vehicles, volunteers, and tour guides.
 
- OBJECTIVE OF THE PROJECT 
-• To provide a platform to find a travel partner.  
-• To provide a platform that connects solo travelers, allowing them to search, match and plan 
-trips with like-minded individuals. 
-• To provide a Tour Guide and a Volunteer.
+The system streamlines the travel planning process by allowing users to register, create or join trips, submit travel requests, and communicate through a centralized platform.
 
- SYSTEM ARCHITECTURE 
+---
 
- ![System Architecture](https://github.com/user-attachments/assets/685263ab-303c-4835-b8b0-a565f878365a)
+# 📖 Table of Contents
 
-                
-The System Architecture explains the process of the Web Application. 
-• User : The user is the person who gives data to the Web Application and gets the Trip 
-Details from the Web Application. 
-• Frontend : The Frontend consists of Web Application. 
-➢ Web Application : The Web Application is what the user sees and interacts with. The 
-Web Application is built using HTML, CSS, JavaScript, React and BootStrap. The Web 
-Application collects the Data from the User and Requests the Web Server. The Web 
-Application gets the Response from the Web Server and displays the Trip Details to the 
-User. 
-• Backend : The Backend consists of Web Server, File System and Database. 
-➢ Web Server : The Web Server contains the Web Application Logic. The Web 
-Application is built using JavaScript, Java and SpringBoot. The Web Server gets the 
-Requests from the Web Applications and sends the Response to the Web Application. 
-The Web Server interacts with the File System for HTMl, CSS and Images files. The 
-Web Server stores the HTML, CSS and Images files in the File System.  
-➢ File System : The File System consists of HTML, CSS and Images files of the Web 
-Application. The File System sends and gets the files from the Web Server and stores 
-in the File System. 
-➢ Database : The Database consist of MySQL. The Database contains the Data that is 
-received by the Web Application that is sent to Web Server. The Database sends and 
-gets the Data from the Web Server and stores in the Database. 
+- Overview
+- Features
+- System Architecture
+- Technology Stack
+- Database Design
+- REST API Endpoints
+- Project Structure
+- Installation Guide
+- Running the Application
+- Future Improvements
+- Contributors
+
+---
+
+# 📌 Overview
+
+Travel Buddy Finder System addresses one of the biggest challenges faced by solo travellers—finding trustworthy travel companions.
+
+The application provides:
+
+- Secure user registration and authentication
+- Trip creation and management
+- Request and application handling
+- Administrative dashboard
+- Vehicle and guide management
+- Volunteer coordination
+
+The backend is developed using **Spring Boot** while the frontend is built with **React.js**, communicating through RESTful APIs.
+
+---
+
+# ✨ Features
+
+## 👤 User Module
+
+- User Registration
+- User Login
+- Username Availability Check
+- Create Travel Trips
+- Join Existing Trips
+- Leave Trips
+- View Available Trips
+- Send Travel Requests
+- Receive Travel Invitations
+
+---
+
+## 👨‍💼 Admin Module
+
+- Secure Admin Login
+- Manage Users
+- Manage Drivers
+- Manage Vehicles
+- Manage Tour Guides
+- Manage Volunteers
+- Monitor Trip Records
+
+---
+
+## 🚗 Trip Management
+
+- Create Trip
+- Delete Trip
+- Check Existing Trips
+- Assign Driver
+- Assign Vehicle
+- Assign Tour Guide
+- Assign Volunteer
+
+---
+
+## 📩 Request Management
+
+- Create Requests
+- Check Pending Requests
+- Display Notifications
+- Accept / Reject Requests
+
+---
+
+## 📄 User Applications
+
+- Submit Applications
+- View Applications
+- Delete Applications
+- Check Existing Applications
+
+---
+
+# 🏗 System Architecture
+
+```
+                React Frontend
+                       │
+                 Axios REST API
+                       │
+                Spring Boot Backend
+                       │
+                Spring Data JPA
+                       │
+                     MySQL
+```
+
+---
+
+# 💻 Technology Stack
+
+## Frontend
+
+- React.js
+- JavaScript (ES6)
+- React Router
+- Axios
+- Bootstrap
+- CSS3
+
+---
+
+## Backend
+
+- Java 17+
+- Spring Boot
+- Spring Web
+- Spring Data JPA
+- Maven
+
+---
+
+## Database
+
+- MySQL
+
+---
+
+## Development Tools
+
+- Visual Studio Code
+- IntelliJ IDEA / Eclipse
+- MySQL Workbench
+- Git
+- GitHub
+
+---
+
+# 🗄 Database
+
+Database Name
+
+```
+travelbuddydb
+```
+
+### Tables
+
+| Table |
+|---------|
+| travel_buddy |
+| admin_details |
+| trip_details |
+| driver_details |
+| car_details |
+| volunteer_application |
+| user_application |
+| user_request |
+| tour_guide_details |
+
+---
+
+# 📡 REST API
+
+## Authentication
+
+| Method | Endpoint |
+|---------|-----------|
+| POST | `/signup` |
+| GET | `/login` |
+| GET | `/userCheck` |
+| GET | `/adminCheck` |
+
+---
+
+## Trips
+
+| Method | Endpoint |
+|---------|-----------|
+| POST | `/tripdetails` |
+| GET | `/tripdetails` |
+| GET | `/tripCheck` |
+| DELETE | `/deletetrip` |
+
+---
+
+## User Requests
+
+| Method | Endpoint |
+|---------|-----------|
+| POST | `/requests` |
+| GET | `/requestCheck` |
+| GET | `/requestNotification` |
+| GET | `/requestOne` |
+| DELETE | `/requestResponse` |
+
+---
+
+## User Applications
+
+| Method | Endpoint |
+|---------|-----------|
+| POST | `/userapplications` |
+| GET | `/applications` |
+| GET | `/applicationCheck` |
+| DELETE | `/deleteapplication` |
+
+---
+
+# 📂 Project Structure
+
+```
+TravelBuddy/
+│
+├── Backend/
+│   └── travelbuddy-backend/
+│       ├── controller/
+│       ├── entity/
+│       ├── repository/
+│       ├── service/
+│       └── resources/
+│
+├── Frontend/
+│   ├── src/
+│   ├── Components/
+│   ├── App.js
+│   └── package.json
+│
+└── README.md
+```
+
+---
+
+# ⚙ Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/TravelBuddy.git
+```
+
+```
+cd TravelBuddy
+```
+
+---
+
+## Backend
+
+```
+cd Backend/travelbuddy-backend
+```
+
+Configure your MySQL credentials in
+
+```
+application.properties
+```
+
+Run
+
+```bash
+./mvnw spring-boot:run
+```
+
+Backend runs on
+
+```
+http://localhost:1234
+```
+
+---
+
+## Frontend
+
+```
+cd Frontend
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run
+
+```bash
+npm start
+```
+
+Frontend runs on
+
+```
+http://localhost:3000
+```
+
+---
+
+# 🔐 Authentication
+
+Two authentication modules are available.
+
+### User Authentication
+
+- Signup
+- Login
+- Username Validation
+
+### Administrator Authentication
+
+- Admin Login
+- Admin Dashboard Access
+
+---
+
+# 🔄 Application Workflow
+
+```
+User Registration
+        │
+        ▼
+User Login
+        │
+        ▼
+Create / Join Trip
+        │
+        ▼
+Request Processing
+        │
+        ▼
+Trip Assignment
+        │
+        ▼
+Travel Completion
+```
+
+---
+
+# 🚀 Recent Improvements
+
+- Refactored Controllers to Constructor Injection
+- Refactored Services to Constructor Injection
+- Fixed Dependency Injection Issues
+- Implemented Username Validation API
+- Implemented Trip Validation API
+- Improved Login Authentication
+- Improved Signup Workflow
+- Fixed REST API Mappings
+- Improved Spring Boot Project Structure
+- Added Better Exception Handling
+- Fixed MySQL Integration
+- Improved React–Spring Communication
+
+---
+
+# 🔮 Future Enhancements
+
+- JWT Authentication
+- Spring Security
+- Email Verification
+- Password Encryption (BCrypt)
+- Google Maps Integration
+- Real-Time Chat
+- Push Notifications
+- Trip Recommendation Engine
+- Payment Integration
+- Docker Deployment
+- CI/CD Pipeline
+- Cloud Deployment (AWS / Azure)
+
+---
+
+# 👨‍💻 Contributors
+
+**Mohammad Shariq Ali**
+
+University of Europe for Applied Sciences
+
+---
+
+# 📜 License
+
+This project is developed for educational and research purposes.
